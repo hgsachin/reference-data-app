@@ -1,12 +1,14 @@
 const MongoClient = require('mongodb').MongoClient;
 
+const DB_URL = process.env.DB_URL || 'mongodb://localhost:27017/'
+
 var queryDB = (collection, query, callback) => {
-    MongoClient.connect('mongodb://localhost:27017/RefData', (err, dbObject) => {
+    MongoClient.connect(`${DB_URL}reference_data`, (err, dbObject) => {
         if (err) {
             console.log('Unable to connect to MongoDB server');
             callback(err);
         }
-        const db = dbObject.db('RefData');
+        const db = dbObject.db('reference_data');
         db.collection(collection).find(JSON.parse(query)).toArray().then((docs) => {
             callback(undefined, docs);
         }, (e) => {
