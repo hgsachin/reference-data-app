@@ -1,0 +1,17 @@
+{
+  "name": "refdataservice",
+  "version": "1.0.0",
+  "description": "This service supports read-only reference to different Entities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sachin Harnahalli",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.0",
+    "mongoose": "^4.13.7"
+  }
+}
