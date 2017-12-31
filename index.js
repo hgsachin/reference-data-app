@@ -7,13 +7,13 @@ const PORT = process.env.PORT || '3030';
 
 const service = express();
 service.use(bodyParser.json());
-
+service.use(express.static(__dirname));
 service.get('/metals', (req, res) => {
     fetchFuntions.getAllMetalDetails((err, doc) => {
         if (err) {
             res.sendStatus(404).send(`An error occured while getting metal details : ${err}`);
         } else {
-            res.send({'metals' : doc});
+            res.send({ 'metals': doc });
         }
     });
 });
