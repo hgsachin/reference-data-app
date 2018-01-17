@@ -4,7 +4,7 @@
   "description": "This service supports read-only reference to different Entities",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha test --recursive",
     "start": "node index.js"
   },
   "engines": {
@@ -17,5 +17,9 @@
     "express": "^4.16.2",
     "mongodb": "^3.0.0",
     "mongoose": "^4.13.7"
+  },
+  "devDependencies": {
+    "expect": "^22.0.6",
+    "mocha": "^4.1.0"
   }
 }
